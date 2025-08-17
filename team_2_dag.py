@@ -10,6 +10,11 @@ def team_2_dag():
     @task()
     def my_task():
         print("Hello from my_task!")
+    
+    @task()
+    def team_2_task():
+        print("Hello from team_2_task!")
 
-    my_task()
+    my_task() >> team_2_task()
+
 team_2_dag_instance = team_2_dag()
